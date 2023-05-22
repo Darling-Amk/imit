@@ -5,22 +5,39 @@ from django.http import HttpResponse
 
 #Главная
 def index(request):
-    return render(request,'index.html')
+    news = [1, 2, 3, 4, 5]
+    news = [
+        {
+        'id':id,
+        'title': f'news#{id}',
+        'text':f'text{id} texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext',
+             } for id in range(1,6)
+    ]
+    data = {'title': 'Петрозаводский государственный университет','news':news}
+    return render(request,'index.html', context=data)
 
 #Институт
 def about(request):
-    return render(request,'about.html')
+    data = {'title': 'О сайте'}
+    return render(request,'about.html', context=data)
 
 #Абитуриентам
 def abit(request):
-    return render(request,'abit.html')
+    data = {'title': 'Абитуриентам'}
+    return render(request,'abit.html', context=data)
 
 def pr_club(request):
-    return render(request,'pr_club.html')
+    data = {'title': 'КТП'}
+    return render(request,'pr_club.html', context=data)
 
 def employers(request):
-    return render(request,'employers.html')
+    data = {'title':'Партнеры'}
+    return render(request,'employers.html', context=data)
 
 def news(request,nid):
-    data = {'id':nid}
+    news = [1,2,3,4,5]
+    if nid not in news:
+        return render(request, 'error.html', context={'title':f'Новость №{nid}','text':'Не существует такой новости'})
+
+    data = {'id': nid,'title':f'Новость №{nid}'}
     return render(request,'news.html', context=data)

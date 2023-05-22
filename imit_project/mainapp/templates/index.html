@@ -1,4 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>news: <a href='/news/1'>тык </a> </p>
+
+{% for new in news %}
+    {% include "news_block.html"%}
+{% endfor %}
 {% endblock content %}
