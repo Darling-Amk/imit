@@ -1,6 +1,14 @@
+{%load static%}
 <div>
-    <a href='/news/{{new.id}}'>
-        <h6>{{new.title}}</h6>
-    </a>
-    <p>{{new.text}}</p>
+    <p>22.05.2023
+        <a href='/news/{{new.id}}'>
+            {{new.title}}
+        </a>
+    </p>
+    <div>
+        <img src=" static/mainapp/img/{{new.id}}.png " alt="">
+    {{new.text}}
+        
+    </div>
+
 </div>

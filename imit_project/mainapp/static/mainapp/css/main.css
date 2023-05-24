@@ -1,0 +1,15 @@
+.logotext{
+    display:flex;
+
+}
+.logotext__img{
+    margin-top:50px;
+    height:100px;
+}
+.logotext__img2{
+    height:70px;
+}
+.header__text{
+    margin-top:10px;
+    color:blue;
+}

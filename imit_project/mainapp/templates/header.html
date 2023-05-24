@@ -1,14 +1,16 @@
- <header>
-     <h1>Петрозаводский государственный университет</h1>
-     <h2>Институт математики и информационных технологий</h2>
+{%load static%}
+<header>
+    <div class = "d-flex justify-content-around">
+
+        <img src="{% static 'mainapp/img/iss-of-analysis.jpg' %}" alt="" class="logotext__img">
+        <div align="center">
+            <h4 class = "header__text">Петрозаводский государственный университет</h4>
+            <h4 class = "header__text">Институт математики и информационных технологий</h4>
+            <img src="{% static 'mainapp/img/g3217.png' %}" alt="" class="logotext__img2">
+        </div>
+        <img src="{% static 'mainapp/img/tux.svg' %}" alt="" class="logotext__img">
+    </div>
+
      <hr>
-        <ul>
-            <li><a href='/'>Главная</a> </li>
-            <li><a href='/about'>Институт</a> </li>
-            <li><a href='.'>Обучение</a> </li>
-            <li><a href='/abit'>Абитуриентам</a> </li>
-            <li><a href='/pr_club'>Клуб программистов</a> </li>
-            <li><a href='.'>Математический клуб</a> </li>
-            <li><a href='/employers'>Вакансии</a> </li>
-        </ul>
+        {% include "navbar.html" %}
  </header>
